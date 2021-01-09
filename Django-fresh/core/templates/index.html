@@ -1,0 +1,27 @@
+{% comment %} url: '{% url "get_more_tables" %}', {% endcomment %}
+{% comment %} <script src="static/js/jquery-3.5.1.slim.min.js" type="text/javascript"></script> <!-- ADD THE CLOSING TAG HERE TOO! --> {% endcomment %}
+<script src="/static/js/jquery-3.1.1.min.js" type="text/javascript"></script> <!-- ADD THE CLOSING TAG HERE TOO! -->
+
+<!-- include required js libraries -->
+{% comment %} <script src="path/to/jquery.js"></script> {% endcomment %}
+{% comment %} <script src="path/to/moment.js"></script> {% endcomment %}
+
+<!-- now the actual js code to show time -->
+<center>
+Fresh page  <BR/>
+by: mrseyfi.ir<BR/><BR/>
+<div id='reload'>
+   {% include "time.html" %}
+</div>
+</center>
+
+
+<script>
+    function updateTime() {
+        $("#reload").load("time");
+
+    };
+    setInterval(function () {
+        updateTime();
+    }, 1000);
+</script>
